@@ -129,3 +129,20 @@ for i in range(1,T+1) :
     a, b = map(int, input().split())
     c = a + b
     print(f"Case #{i}: {c}")
+
+# 백준 문제 11022번 문제 A + B - f-string 연습
+
+T = int(input())
+
+for i in range(1, T + 1) :
+    a, b = map(int, input().split())
+    c = a + b
+    print(f"Case #{i}: {a} + {b} = {c}")
+
+# 백준 문제 2439번 문제 별 찍기(2) - 오른쪽 정렬 str.rjust(자릿수)를 이용한 문제.
+
+n = int(input())
+a = '*'
+for i in range(1, n + 1) :
+    b = a * i 
+    print(str(b).rjust(n))
