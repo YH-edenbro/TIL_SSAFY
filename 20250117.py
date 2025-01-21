@@ -58,4 +58,138 @@ for i in range(0,N) :
 
 print(b)
 
-# 백준 문제
+# 백준 문제 25304번 영수증
+
+x = int(input())
+n = int(input())
+t = 0
+for i in range(n) :
+    a, b = map(int, input().split())
+    t += (a * b)
+if t == x :
+    print("Yes")
+else :
+    print("No")
+
+# 백준 문제 25314번 코딩은 체육입니다 - 파이썬 기준 굳이 반복문 필요 x
+
+n = int(input())
+a = n // 4
+print("long " * a + "int")
+
+# 백준 문제 10818번 최소 최대 문제 - min, max 함수 이용
+
+n = int(input())
+a = list(map(int, input().split()))
+print(min(a), max(a))
+
+# 백준 문제 2525번 오븐 시계 - 시간은 24시까지, 분은 59까지 표기되는 특성을 이용한 문제.
+
+h,m = map(int, input().split())
+m_i = int(input())
+
+m_h = (m + m_i) // 60 # 현재 시간의 분 m 과 내가 요리에 필요한 분 m_i의 합
+
+if (h + m_h >= 24) :
+    print((h + m_h - 24), (m + m_i - (60 * m_h)))
+else :
+    print((h + m_h), (m + m_i - (60 * m_h)))
+
+# 백준 문제 2480 주사위 세개 - 조건문과 적절한 함수 사용이 중요한 문제
+
+a, b, c = map(int, input().split())
+d = [a, b, c]
+
+if a == b == c : # 같은 눈 세개
+    print(10000 + (a * 1000)) 
+elif a == b and a != c : # a,b 같은 눈, c는 다른 눈
+    print(1000 + (a * 100)) 
+elif a == c and a != b : # a,c 같은 눈, b는 다른 눈
+    print(1000 + (a * 100))
+elif b == c and a != b : # b,c 같은 눈, a는 다른 눈
+    print(1000 + (b * 100))
+elif a != b and a != c and b != c :
+    print(max(d) * 100)
+
+# 백준 문제 15552번 문제 - sys.stdin.readline()을 이용하여 더 빠른 시행
+
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T) :
+    a, b = map(int, sys.stdin.readline().split())
+    print(a + b)
+
+# 백준 문제 11021번 문제 - A + B - 반복문 안에 표현식을 얼마나 잘 작성하는지 테스트
+
+T = int(input())
+
+for i in range(1,T+1) :
+    a, b = map(int, input().split())
+    c = a + b
+    print(f"Case #{i}: {c}")
+
+# 백준 문제 11022번 문제 A + B - f-string 연습
+
+T = int(input())
+
+for i in range(1, T + 1) :
+    a, b = map(int, input().split())
+    c = a + b
+    print(f"Case #{i}: {a} + {b} = {c}")
+
+# 백준 문제 2439번 문제 별 찍기(2) - 오른쪽 정렬 str.rjust(자릿수)를 이용한 문제.
+
+n = int(input())
+a = '*'
+for i in range(1, n + 1) :
+    b = a * i 
+    print(str(b).rjust(n))
+
+# 백준 문제 10952번 문제 A+B(5) - 무한 루프에서 조건을 넣어 break를 걸어주는 방법
+
+while True :
+    a, b = map(int, input().split())
+    if (a and b) == 0 :
+        break
+    print(a + b)
+
+# 백준 문제 10951번 문제 A+B(4) - try, except를 쓰는 문제. 
+
+while True :
+    try :
+        a, b = map(int, input().split())
+        print(a + b)
+    except :
+        break
+    
+# 백준 10871번 문제 X보다 작은 수 - 반복문안에 조건문과 언패킹을 적절하게 섞어쓰는 문제
+
+n, x = map(int,input().split())
+a = list(map(int, input().split()))
+b = []
+
+for i in range(n) :
+    if a[i] < x :
+        b.append(a[i])
+
+print(*b)
+
+# 백준 2562번 문제 최댓값 - max함수를 사용 가능한지, .index()로 인덱스 번호를 찾을 수 있는지 물어보는 문제
+
+n1 = int(input())
+n2 = int(input())
+n3 = int(input())
+n4 = int(input())
+n5 = int(input())
+n6 = int(input())
+n7 = int(input())
+n8 = int(input())
+n9 = int(input())
+
+a = [n1, n2, n3, n4, n5, n6, n7, n8, n9]
+ma = max(a)
+
+print(ma)
+print(a.index(ma) + 1)
