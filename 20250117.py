@@ -146,3 +146,11 @@ a = '*'
 for i in range(1, n + 1) :
     b = a * i 
     print(str(b).rjust(n))
+
+# 백준 문제 10952번 문제 A+B(5) - 무한 루프에서 조건을 넣어 break를 걸어주는 방법
+
+while True :
+    a, b = map(int, input().split())
+    if (a and b) == 0 :
+        break
+    print(a + b)
