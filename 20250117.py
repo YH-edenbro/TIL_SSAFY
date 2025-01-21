@@ -154,3 +154,13 @@ while True :
     if (a and b) == 0 :
         break
     print(a + b)
+
+# 백준 문제 10951번 문제 A+B(4) - try, except를 쓰는 문제. 
+
+while True :
+    try :
+        a, b = map(int, input().split())
+        print(a + b)
+    except :
+        break
+    
