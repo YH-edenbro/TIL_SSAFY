@@ -37,4 +37,25 @@ for i in range(T) :
     a, b = map(int, input().split())
     print(a + b)
 
-# 백준 문제 
+# 백준 문제 8393번 합 - 반복문과 변수에 합을 추가하는 해결방법
+
+n = int(input())
+a = 0
+for i in range(1,n+1) :
+    a = a + i
+print(a)
+
+# 백준 문제 1007번 개수 세기 - 개수를 늘리는 방식의 고민
+
+N = int(input())
+a = list(map(int, input().split()))
+v = int(input())
+b = 0
+
+for i in range(0,N) :
+    if v == a[i] :
+        b += 1
+
+print(b)
+
+# 백준 문제
