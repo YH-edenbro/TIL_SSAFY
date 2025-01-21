@@ -82,3 +82,50 @@ print("long " * a + "int")
 n = int(input())
 a = list(map(int, input().split()))
 print(min(a), max(a))
+
+# 백준 문제 2525번 오븐 시계 - 시간은 24시까지, 분은 59까지 표기되는 특성을 이용한 문제.
+
+h,m = map(int, input().split())
+m_i = int(input())
+
+m_h = (m + m_i) // 60 # 현재 시간의 분 m 과 내가 요리에 필요한 분 m_i의 합
+
+if (h + m_h >= 24) :
+    print((h + m_h - 24), (m + m_i - (60 * m_h)))
+else :
+    print((h + m_h), (m + m_i - (60 * m_h)))
+
+# 백준 문제 2480 주사위 세개 - 조건문과 적절한 함수 사용이 중요한 문제
+
+a, b, c = map(int, input().split())
+d = [a, b, c]
+
+if a == b == c : # 같은 눈 세개
+    print(10000 + (a * 1000)) 
+elif a == b and a != c : # a,b 같은 눈, c는 다른 눈
+    print(1000 + (a * 100)) 
+elif a == c and a != b : # a,c 같은 눈, b는 다른 눈
+    print(1000 + (a * 100))
+elif b == c and a != b : # b,c 같은 눈, a는 다른 눈
+    print(1000 + (b * 100))
+elif a != b and a != c and b != c :
+    print(max(d) * 100)
+
+# 백준 문제 15552번 문제 - sys.stdin.readline()을 이용하여 더 빠른 시행
+
+import sys
+
+T = int(sys.stdin.readline())
+
+for i in range(T) :
+    a, b = map(int, sys.stdin.readline().split())
+    print(a + b)
+
+# 백준 문제 11021번 문제 - A + B - 반복문 안에 표현식을 얼마나 잘 작성하는지 테스트
+
+T = int(input())
+
+for i in range(1,T+1) :
+    a, b = map(int, input().split())
+    c = a + b
+    print(f"Case #{i}: {c}")
