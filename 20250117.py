@@ -57,3 +57,28 @@ for i in range(0,N) :
         b += 1
 
 print(b)
+
+# 백준 문제 25304번 영수증
+
+x = int(input())
+n = int(input())
+t = 0
+for i in range(n) :
+    a, b = map(int, input().split())
+    t += (a * b)
+if t == x :
+    print("Yes")
+else :
+    print("No")
+
+# 백준 문제 25314번 코딩은 체육입니다 - 파이썬 기준 굳이 반복문 필요 x
+
+n = int(input())
+a = n // 4
+print("long " * a + "int")
+
+# 백준 문제 10818번 최소 최대 문제 - min, max 함수 이용
+
+n = int(input())
+a = list(map(int, input().split()))
+print(min(a), max(a))
