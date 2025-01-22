@@ -1,14 +1,12 @@
-n, m = map(int, input().split()) # 공과 바구니의 수 : n / 바구니에 공을 넣는 시도 횟수 : m
-b = [] # 빈 바구니 
+a = [] # 빈 바구니
 
-for item in range(n) : #n개 만큼 바구니의 크기 만들기
-    b.append(0)
+n, m = map(int, input().split()) # n : 바구니 개수, m : 바꾸는 시도 횟수
 
-for item in range(m) :
-    i, j, k = map(int, input().split()) # i-j번 바구니까지 담기. k번 번호의 공 선정
-    c = [] # 빈 바구니에 넣을 공 주머니 리셋
-    for item in range(m) :
-        c.append(k)
-    b[i:j+1] = c
+for i in range(1,n+1): #바구니 번호 == 공 번호
+    a.append(i)
 
-print(b)
+for item in range(m):
+    i,j = map(int, input().split()) #서로 바꿀 바구니 번호
+    a[j-1], a[i-1] = a[i-1], a[j-1] # i번째 바구니 공과 j번째 바구니 공 교환 (파이썬만 가능한 방법)
+    
+print(*a)

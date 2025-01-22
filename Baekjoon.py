@@ -193,3 +193,35 @@ ma = max(a)
 
 print(ma)
 print(a.index(ma) + 1)
+
+# 백준 10810번 문제 공 넣기 - 사람의 순서와 파이썬의 순서는 다른 점, 마지막 언패킹까지 꼼꼼하게 할 것. 
+
+n, m = map(int, input().split()) # 공과 바구니의 수 : n / 바구니에 공을 넣는 시도 횟수 : m
+b = [] # 빈 바구니 
+
+for item in range(n) : #n개 만큼 바구니의 크기 만들기
+    b.append(0)
+
+for item in range(m) :
+    i, j, k = map(int, input().split()) # i-j번 바구니까지 담기. k번 번호의 공 선정
+    c = [] # 빈 바구니에 넣을 공 주머니 리셋
+    for item in range((j-i+1)) :
+        c.append(k)
+    b[i-1:j] = c
+
+print(*b)
+
+# 백준 10813번 문제 공 바꾸기 - 파이썬 기준으로 간단한 방식으로 공을 교환하는 로직을 만들 수 있음.
+
+a = [] # 빈 바구니
+
+n, m = map(int, input().split()) # n : 바구니 개수, m : 바꾸는 시도 횟수
+
+for i in range(1,n+1): #바구니 번호 == 공 번호
+    a.append(i)
+
+for item in range(m):
+    i,j = map(int, input().split()) #서로 바꿀 바구니 번호
+    a[j-1], a[i-1] = a[i-1], a[j-1] # i번째 바구니 공과 j번째 바구니 공 교환 (파이썬만 가능한 방법)
+    
+print(*a)
