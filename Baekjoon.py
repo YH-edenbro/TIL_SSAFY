@@ -225,3 +225,32 @@ for item in range(m):
     a[j-1], a[i-1] = a[i-1], a[j-1] # i번째 바구니 공과 j번째 바구니 공 교환 (파이썬만 가능한 방법)
     
 print(*a)
+
+# 백준 5597번 문제 과제 안내신 분..? - for과 자료형의 전환을 연습하는 문제.
+
+a = set() # 전체 출석부
+b = set() # 제출한 사람
+
+for i in range(1,31) : # 30명의 출석부 생성
+    a.add(i)
+
+for i in range (28) : # 과제 제출한 사람들 명단
+    n = int(input())
+    b.add(n)
+
+c = a - b # 과제를 제출 안한 학생
+d = sorted(list(c)) # 과제 제출 안한 학생 리스트화 + 정렬
+
+for i in range(len(d)) : #과제 제출 안한 학생을 번호 빠른 순서로
+    print(d[i])
+
+# 백준 3052번 문제 나머지 - 자료형의 특징을 이해하고 활용하는 문제.
+
+a = set() # 나머지 저장용
+
+for i in range(10) :
+    n = int(input())
+    a.add(n % 42)
+
+print(len(list(a))) #list의 길이 == 서로 다른 나머지의 개수
+
