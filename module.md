@@ -77,3 +77,11 @@ pip install SomePackage (최신 버전)
 pip install SomePackage==1.0.5 (특정 버전)
 pip install SomePackage>=1.0.4 (최소 버전전)
 ```
+```
+pip list : pip로 설치한 패키지 확인인
+```
+
+### 패키지 사용 목적
+
+- 모듈들의 이름공간을 구분하여 충돌을 방지.
+- 모듈들을 효율적으로 관리하고 재사용할 수 있도록 돕는 역할할
