@@ -277,3 +277,10 @@ for num in b:
     total += int(num)
 
 print(total)
+
+# 백준 27866번 문제 문자와 문자열 - 매우 기본적인 문제.
+
+S = input()
+i = int(input())
+
+print(S[i-1])
