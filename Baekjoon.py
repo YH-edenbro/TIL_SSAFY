@@ -265,3 +265,15 @@ if a == ' ':
     print(0)
 else:    
     print(len(c))
+
+# 백준 11720번 문제 숫자의 합 - 형변환을 잘 사용하는지 묻는 문제.
+
+a = int(input())
+b = input() #a의 개수만큼 b에 숫자를 적음
+
+total = 0
+
+for num in b:
+    total += int(num)
+
+print(total)

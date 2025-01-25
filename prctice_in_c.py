@@ -1,9 +1,9 @@
-a = input()
+a = int(input())
+b = input() #a의 개수만큼 b에 숫자를 적음
 
-b = a.strip()
-c = b.split(sep= ' ')
+total = 0
 
-if a == ' ':
-    print(0)
-else:    
-    print(len(c))
+for num in b:
+    total += int(num)
+
+print(total)
