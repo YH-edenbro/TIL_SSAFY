@@ -284,3 +284,15 @@ S = input()
 i = int(input())
 
 print(S[i-1])
+
+# 백준 1546번 문제 평균 - for문 활용
+
+n = int(input())
+score = list(map(int, input().split()))
+m = max(score)
+
+for i in range(len(score)):
+    score[i] = score[i]/m*100
+
+result = sum(score)/len(score)
+print(result) 
