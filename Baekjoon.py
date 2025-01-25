@@ -296,3 +296,20 @@ for i in range(len(score)):
 
 result = sum(score)/len(score)
 print(result) 
+
+# 백준 2675번 문제 문자열 반복 - 문자열은 수정이 불가능한 타입인 점을 고려해서 풀어야 하는 문제
+
+T = int(input())
+
+for i in range(T):
+    r, s = map(str, input().split())
+    a = []
+
+    for char in s:
+        a.append(char)
+
+    for j in range(len(a)):
+        a[j] = a[j] * int(r)
+    
+    s= ''.join(a)
+    print(s)
