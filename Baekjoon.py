@@ -254,3 +254,14 @@ for i in range(10) :
 
 print(len(list(a))) #list의 길이 == 서로 다른 나머지의 개수
 
+# 백준 1152번 문제 단어의 개수 - 공백만 입력했을 때를 고려해야하는 문제.
+
+a = input()
+
+b = a.strip()
+c = b.split(sep= ' ')
+
+if a == ' ':
+    print(0)
+else:    
+    print(len(c))
