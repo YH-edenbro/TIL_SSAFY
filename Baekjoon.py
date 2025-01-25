@@ -313,3 +313,20 @@ for i in range(T):
     
     s= ''.join(a)
     print(s)
+
+# 백준 2751번 문제 수 정렬하기 2 - sys 모듈을 사용해서 시간복잡도를 관리하는 문제.
+
+import sys
+
+n = sys.stdin.readline()
+
+a = []
+
+for i in range(int(n)):
+    num = sys.stdin.readline()
+    a.append(int(num))
+
+a.sort()
+
+for num in a:
+    print(num)

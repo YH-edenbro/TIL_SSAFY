@@ -1,14 +1,16 @@
-T = int(input())
+import sys
 
-for i in range(T):
-    r, s = map(str, input().split())
-    a = []
+n = sys.stdin.readline()
 
-    for char in s:
-        a.append(char)
+a = []
 
-    for j in range(len(a)):
-        a[j] = a[j] * int(r)
-    
-    s= ''.join(a)
-    print(s)
+for i in range(int(n)):
+    num = sys.stdin.readline()
+    a.append(int(num))
+
+a.sort()
+a = set(a)
+a = list(a)
+
+for num in a:
+    print(num)
