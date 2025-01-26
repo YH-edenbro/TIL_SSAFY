@@ -1,16 +1,8 @@
-import sys
+string = input()
+str_list = []
 
-n = sys.stdin.readline()
+for char in string:
+    str_list.append(char)
 
-a = []
-
-for i in range(int(n)):
-    num = sys.stdin.readline()
-    a.append(int(num))
-
-a.sort()
-a = set(a)
-a = list(a)
-
-for num in a:
-    print(num)
+for i in str_list:
+    str_list.count(i)
