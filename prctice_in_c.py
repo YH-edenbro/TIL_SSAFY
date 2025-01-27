@@ -1,11 +1,15 @@
-s = input()
+n = int(input())
+a = []
 
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-index_num = []
-for char in alphabet:
-    if char not in s:
-        index_num.append(-1)
-    else:
-        index_num.append(s.index(char))
+for i in range(n):
+    a.append('*' + ('*' * 2 * i))
 
-print(*index_num) 
+while True:
+    for item in a:
+        print(item.center(2*n))
+    for item2 in a[-2::-1]:
+        print(item2.center(2*n))
+    break
+
+
+
