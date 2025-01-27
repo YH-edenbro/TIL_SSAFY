@@ -330,3 +330,12 @@ a.sort()
 
 for num in a:
     print(num)
+
+# 백준 11718번 문제 그대로 출력하기 - 입력이 없을 때 까지 그대로 출력하도록 만들어주는 프로그램. try - except 구문을 이용하자.
+
+while True:
+    try:
+        string = input()
+        print(string)
+    except EOFError:
+        break
