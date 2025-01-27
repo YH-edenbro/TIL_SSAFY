@@ -1,17 +1,11 @@
-string = list(input().upper())
-string.sort()
+s = input()
 
-unique_list   = []
-count_list = []
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+index_num = []
+for char in alphabet:
+    if char not in s:
+        index_num.append(-1)
+    else:
+        index_num.append(s.index(char))
 
-for char in string:
-    if char not in unique_list:
-        unique_list.append(char)
-
-for char in unique_list:
-    count_list.append(string.count(char))
-
-if count_list.count(max(count_list)) >= 2:
-    print('?')
-else:
-    print(unique_list[count_list.index(max(count_list))])
+print(*index_num) 

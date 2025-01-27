@@ -359,3 +359,17 @@ if count_list.count(max(count_list)) >= 2:
     print('?')
 else:
     print(unique_list[count_list.index(max(count_list))])
+
+# 백준 10809번 문제 알파벳 찾기 - 리스트의 메소드와 언패킹을 활용한 풀이 
+
+s = input()
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+index_num = []
+for char in alphabet:
+    if char not in s:
+        index_num.append(-1)
+    else:
+        index_num.append(s.index(char))
+
+print(*index_num) 
