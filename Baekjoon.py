@@ -373,3 +373,13 @@ for char in alphabet:
         index_num.append(s.index(char))
 
 print(*index_num) 
+
+# 백준 2444번 문제 별 찍기 7 - str.center와 같은 메소드는 뒤에 공백이 함께 출력되기 때문에 문제 의도와는 다른 풀이였음.
+
+n = int(input())
+
+for i in range(1, n):
+    print(' '*(n-i) + '*'*(2*i-1))
+
+for i in range(n, 0, -1):
+    print(' '*(n-i) + '*'*(2*i-1))

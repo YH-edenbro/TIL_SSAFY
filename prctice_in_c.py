@@ -1,12 +1,6 @@
-a, b, v = map(int, input().split())  #낮에는 a미터, 밤에는 -b미터, 나무막대v
+n = int(input())
 
-start = 0 # 달팽이의 시작점
-day = 0
-
-while start >= v :
-    start = start + a
-    start = start - b
-    day = day + 1
-    continue
-
-print(day)
+for i in range(1, n):
+    print(' '*(n-i) + '*'*(2*i-1))
+for i in range(n, 0, -1):
+    print(' '*(n-i) + '*'*(2*i-1))
