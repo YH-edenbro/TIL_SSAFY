@@ -1,5 +1,12 @@
-t = int(input())
+n, m = map(int, input().split())
 
-for i in range(t):
-    a = input()
-    print(f"{a[0]}{a[-1]}")
+a = []
+
+for item in range(1,n+1):
+    a.append(item)
+
+for item in range(m):
+    i, j = map(int, input().split())
+    a[i-1:j] = a[j-1:i+1:-1]
+
+print(*a)
