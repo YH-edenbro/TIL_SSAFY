@@ -383,3 +383,17 @@ for i in range(1, n):
 
 for i in range(n, 0, -1):
     print(' '*(n-i) + '*'*(2*i-1))
+
+# 백준 2743번 문제 단어 길이 재기  - 리뷰할 필요 x
+
+a = input()
+
+print(len(a))
+
+# 백준 9086번 문제  문자열 - f-스트링만 잘 쓰면 되는 문제.
+
+t = int(input())
+
+for i in range(t):
+    a = input()
+    print(f"{a[0]}{a[-1]}")
