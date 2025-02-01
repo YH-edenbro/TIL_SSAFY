@@ -1,12 +1,17 @@
-n, m = map(int, input().split())
+n = int(input())
+a = list(map(int, input().split()))
+b = 0
 
-a = []
 
-for item in range(1,n+1):
-    a.append(item)
+if 1 in a:
+    b += 1
 
-for item in range(m):
-    i, j = map(int, input().split())
-    a[i-1:j] = a[j-1:i+1:-1]
 
-print(*a)
+for item in a:
+    for num in range(2, item):
+        if item % num == 0:
+            b += 1
+            break
+        
+        
+print(n - b)

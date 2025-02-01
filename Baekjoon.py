@@ -397,3 +397,23 @@ t = int(input())
 for i in range(t):
     a = input()
     print(f"{a[0]}{a[-1]}")
+
+# 백준 1978번 문제 소수 찾기 - 소수의 특성을 어떻게 구현하는지가 중요한 문제.
+
+n = int(input())
+a = list(map(int, input().split()))
+b = 0
+
+
+if 1 in a:
+    b += 1
+
+
+for item in a:
+    for num in range(2, item):
+        if item % num == 0:
+            b += 1
+            break
+        
+        
+print(n - b)
