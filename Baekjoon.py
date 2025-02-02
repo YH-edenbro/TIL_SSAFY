@@ -397,3 +397,65 @@ t = int(input())
 for i in range(t):
     a = input()
     print(f"{a[0]}{a[-1]}")
+
+# 백준 1978번 문제 소수 찾기 - 소수의 특성을 어떻게 구현하는지가 중요한 문제.
+
+n = int(input())
+a = list(map(int, input().split()))
+b = 0
+
+
+if 1 in a:
+    b += 1
+
+
+for item in a:
+    for num in range(2, item):
+        if item % num == 0:
+            b += 1
+            break
+        
+        
+print(n - b)
+
+
+# 백준 2566번 문제 최댓값 - list의 메소드를 이용하고 2차원 배열을 1차원으로 늘여놓았을 때 어떻게 좌표를 정할건지가 관건인 문제.
+
+list_a = []
+
+for i in range(9):
+    a = list(map(int, input().split()))
+    list_a.extend(a)
+
+
+max_a = max(list_a)
+max_a_index = list_a.index(max_a)
+row = max_a_index // 9 + 1
+col = max_a_index % 9 + 1
+
+print(max_a)
+print(row, col)
+
+
+# 백준 2164번 문제 카드2 - 시간 복잡도를 고려해서 풀어야 하는 문제. 리스트의 기본 메소드인 pop(0)은 시간복잡도가 O(n).
+
+import sys
+from collections import deque
+
+n = int(sys.stdin.readline())
+card = [] #카드목록
+
+#카드를 순서에 맞춰 번호 매기기
+for i in range(1,n+1):
+    card.append(i)
+
+card = deque(card)
+
+while len(card) > 1:
+    card.popleft()
+    card.append(card.popleft())
+    
+
+print(*card)
+
+# 백준 1110번 문제 더하기 사이클 - 아직 미 구현
