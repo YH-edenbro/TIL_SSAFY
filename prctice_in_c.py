@@ -1,12 +1,11 @@
-n, m = map(int, input().split())
+a, b, v = map(int, input().split())
+start_m = 0
+day = 0
 
-a = []
+while v >= start_m:
+    start_m = start_m + a
+    start_m = start_m - b
+    day = day + 1
 
-for item in range(1,n+1):
-    a.append(item)
-
-for item in range(m):
-    i, j = map(int, input().split())
-    a[i-1:j] = a[j-1:i+1:-1]
-
-print(*a)
+print(day)
+    
