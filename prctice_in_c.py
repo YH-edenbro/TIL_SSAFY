@@ -1,14 +1,18 @@
-list_a = []
+import sys
+from collections import deque
 
-for i in range(9):
-    a = list(map(int, input().split()))
-    list_a.extend(a)
+n = int(sys.stdin.readline())
+card = [] #카드목록
 
+#카드를 순서에 맞춰 번호 매기기
+for i in range(1,n+1):
+    card.append(i)
 
-max_a = max(list_a)
-max_a_index = list_a.index(max_a)
-row = max_a_index // 9 + 1
-col = max_a_index % 9 + 1
+card = deque(card)
 
-print(max_a)
-print(row, col)
+while len(card) > 1:
+    card.popleft()
+    card.append(card.popleft())
+    
+
+print(*card)

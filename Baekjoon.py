@@ -435,3 +435,25 @@ col = max_a_index % 9 + 1
 
 print(max_a)
 print(row, col)
+
+
+# 백준 2164번 문제 카드2 - 시간 복잡도를 고려해서 풀어야 하는 문제. 리스트의 기본 메소드인 pop(0)은 시간복잡도가 O(n).
+
+import sys
+from collections import deque
+
+n = int(sys.stdin.readline())
+card = [] #카드목록
+
+#카드를 순서에 맞춰 번호 매기기
+for i in range(1,n+1):
+    card.append(i)
+
+card = deque(card)
+
+while len(card) > 1:
+    card.popleft()
+    card.append(card.popleft())
+    
+
+print(*card)
