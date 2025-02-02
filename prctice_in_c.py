@@ -1,17 +1,14 @@
-n = int(input())
-a = list(map(int, input().split()))
-b = 0
+list_a = []
+
+for i in range(9):
+    a = list(map(int, input().split()))
+    list_a.extend(a)
 
 
-if 1 in a:
-    b += 1
+max_a = max(list_a)
+max_a_index = list_a.index(max_a)
+row = max_a_index // 9 + 1
+col = max_a_index % 9 + 1
 
-
-for item in a:
-    for num in range(2, item):
-        if item % num == 0:
-            b += 1
-            break
-        
-        
-print(n - b)
+print(max_a)
+print(row, col)

@@ -417,3 +417,21 @@ for item in a:
         
         
 print(n - b)
+
+
+# 백준 2566번 문제 최댓값 - list의 메소드를 이용하고 2차원 배열을 1차원으로 늘여놓았을 때 어떻게 좌표를 정할건지가 관건인 문제.
+
+list_a = []
+
+for i in range(9):
+    a = list(map(int, input().split()))
+    list_a.extend(a)
+
+
+max_a = max(list_a)
+max_a_index = list_a.index(max_a)
+row = max_a_index // 9 + 1
+col = max_a_index % 9 + 1
+
+print(max_a)
+print(row, col)
