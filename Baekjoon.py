@@ -458,4 +458,20 @@ while len(card) > 1:
 
 print(*card)
 
-# 백준 1110번 문제 더하기 사이클 - 아직 미 구현
+# 백준 1110번 문제 더하기 사이클 - str이 아닌 숫자 그 자체로 생각하는 방식으로 풀어보기
+
+n = int(input())
+cycle = 0
+new_n = n
+
+while True:
+    ten = new_n // 10 # 10의자리수
+    one = new_n % 10 # 1의 자리수
+    sum_n = ten + one # 각 자리수의 합
+    new_n = (new_n % 10) * 10 + (sum_n%10)
+    cycle += 1
+
+    if new_n == n:
+        break
+
+print(cycle)
