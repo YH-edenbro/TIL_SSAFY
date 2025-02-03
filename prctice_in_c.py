@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-a, b, v = map(int, input().split())
-start_m = 0
-day = 0
-
-while v >= start_m:
-    start_m = start_m + a
-    start_m = start_m - b
-    day = day + 1
-
-print(day)
-    
-=======
 import sys
 
 n = int(sys.stdin.readline())
@@ -39,4 +26,3 @@ while int(new_n) != n:
         break
 
 print(a)
->>>>>>> fa7e5dccc698dac42180e42b916feca1217c8bc9
