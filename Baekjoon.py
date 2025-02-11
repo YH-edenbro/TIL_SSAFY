@@ -475,3 +475,52 @@ while True:
         break
 
 print(cycle)
+
+# 백준 12927 배수 스위치
+
+arr = list(input())
+
+N = len(arr)
+lights = {'Y' : 1, 'N' : 0} # 켜진 상태를 1, 꺼진 상태를 0으로 둔다.
+arr_n = [0] # 전구와 스위치의 번호가 1부터 시작하므로 인덱스도 거기에 맞추기 위해 앞에 더미데이터 0
+
+# Y -> 1로 N -> 0으로 바꿔서 arr_n 만들기
+for light in arr:
+    arr_n.append(lights[light])
+
+turning = 0  # 스위치 사용한 횟수
+i = 1  # 0번은 더미데이터니까 넘어감
+
+# 전부 꺼지거나 인덱스 범위를 넘어가기 전 까지 진행하기
+while 1 in arr_n or i < N:
+    # 꺼져있으면 넘어가기
+    if arr_n[i] == 0:
+        i += 1
+        continue
+    # 첫번째 스위치는 모든 전구를 반전시키므로 특수하게 다룬다.
+    if i == 1 and arr_n[1] == 1:
+        for n in range(1, N+1):
+            if arr_n[n] == 1:
+                arr_n[n] = 0
+            else:
+                arr_n[n] = 1
+        turning += 1
+        i += 1
+        continue
+
+    # 배수의 스위치를 모두 반전시킴
+    for n in range(1, N+1):
+        if i * n < N+1:
+            if arr_n[i * n] == 0:
+                arr_n[i * n] = 1
+            else:
+                arr_n[i * n] = 0
+    turning += 1
+    i += 1
+    continue
+
+# 스위치를 전부 건드려도 켜져있는 스위치가 있으면 -1을 출력
+if 1 in arr_n:
+    turning = -1
+
+print(turning)
