@@ -20,3 +20,5 @@ for tc in range(1, T+1):
         i += 1
 
     print(f'#{tc} {cnt}')
+
+    # 전봇대
